@@ -1,0 +1,13 @@
+torch==2.7.1+cpu
+torchvision==0.22.1+cpu
+torchaudio==2.7.1+cpu
+opencv-contrib-python==4.12.0.88
+lerobot==0.4.3
+feetech-servo-sdk>=1.0.0,<2.0.0
+scservo_sdk
+safetensors
+numpy
+pyarrow
+datasets
+pyav
+av

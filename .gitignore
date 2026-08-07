@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+.conda/
+env/
+venv/
+*.egg-info/
+dist/
+build/
+outputs/
+.vscode/
+.idea/
+*.swp
+*.swo
+*.rrd
+pretrained_model/

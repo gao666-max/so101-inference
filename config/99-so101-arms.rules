@@ -1,0 +1,18 @@
+# SO101 机械臂 udev 固定端口规则
+# 路径: /etc/udev/rules.d/99-so101-arms.rules
+#
+# 创建方式:
+#   sudo nano /etc/udev/rules.d/99-so101-arms.rules
+#   粘贴下面两行
+#   sudo udevadm control --reload-rules
+#   sudo udevadm trigger
+#   验证: ls -l /dev/so101_*
+#
+# 注意: 序列号(serial)必须替换为你自己设备的真实序列号!
+#       查询方式: udevadm info --name=/dev/ttyACM0 --attribute-walk | grep serial
+
+# 领导臂 (Leader) - serial 5B61036255
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d3", ATTRS{serial}=="5B61036255", SYMLINK+="so101_leader_single", MODE:="0666", GROUP:="dialout"
+
+# 从动臂 (Follower) - serial 5B3D046023
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d3", ATTRS{serial}=="5B3D046023", SYMLINK+="so101_follower_single", MODE:="0666", GROUP:="dialout"
